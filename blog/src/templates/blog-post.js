@@ -1,9 +1,9 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/layout'
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/layout';
 
 const BlogPost = ({ data}) => {
-    const { title , body } = data.contentfulBlogPost;
+    const { title, body } = data.contentfulBlogPost;
 
     return(
         <Layout>
@@ -20,11 +20,11 @@ export const pageQuery = graphql`
         contentfulBlogPost(slug: {eq: $slug}) {
             title
             slug
-    		body {
-              childMarkdownRemark {
-                html
-              }
+            body {
+                childMarkdownRemark {
+                    html
+                }
             }
         }
-    }    
+    }
 `
