@@ -3,9 +3,11 @@ import { PropTypes } from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, { ThemeProvider } from "styled-components"
 
+
+
+import { Gray } from './themes/Gray'
 import { Header } from "./Header"
 import "./layout.css"
-import { Gray } from "./themes/Gray"
 import { Main } from './Main'
 import { Footer} from './Footer'
 
@@ -29,7 +31,7 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={Gray}>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header siteTitle={data.site.siteMetadata.title || `Title`} />
       <Content>
         <Main>{children}</Main>
         <Footer
